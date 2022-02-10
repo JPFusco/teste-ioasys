@@ -1,0 +1,26 @@
+.feedback-login-container {
+  position: absolute;
+  bottom: -64px;
+
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #FFFFFF;
+
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.feedback-login-container:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid rgba(255, 255, 255, 0.4);
+  left: 16px;
+  top: -16px;
+}
