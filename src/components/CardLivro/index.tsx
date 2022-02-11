@@ -9,7 +9,7 @@ function CardLivro({ livro }: { livro: ILivro }) {
         <div className="card-livro-info-top">
           <h1>{livro.title}</h1>
           {livro.authors.map((autor, index) => (
-            <h2>
+            <h2 key={autor}>
               {autor}
               {index === livro.authors.length - 1 ? '' : ','}
             </h2>

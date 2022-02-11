@@ -1,9 +1,14 @@
 import './style.css';
 import LogoBlack from '../../assets/logo-black.svg';
 import IconeLogout from '../../assets/icone-logout.svg';
+import useGlobalContext from '../../hooks/useGlobalContext';
 
 function Header() {
-  const usuarioLogado = { nome: 'Guilherme' };
+  const { removeAuthToken, nomeUsuarioLogado } = useGlobalContext();
+
+  const handleLogout = () => {
+    removeAuthToken();
+  };
 
   return (
     <div className="header-container">
@@ -16,11 +21,13 @@ function Header() {
           Bem vindo,
           {' '}
           <strong>
-            {usuarioLogado.nome}
+            {nomeUsuarioLogado}
             !
           </strong>
         </span>
-        <img src={IconeLogout} alt="Logout" />
+        <button type="button" onClick={handleLogout}>
+          <img src={IconeLogout} alt="Logout" />
+        </button>
       </div>
     </div>
   );

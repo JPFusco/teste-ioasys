@@ -32,7 +32,8 @@
   margin-right: 16px;
 }
 
-.header-right img {
+.header-right button {
+  all: unset;
   cursor: pointer;
 
   width: 32px;

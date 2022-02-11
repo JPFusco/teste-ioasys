@@ -4,7 +4,7 @@ import CardLivro from '../../components/CardLivro';
 import Paginacao from '../../components/Paginacao';
 
 function Home() {
-  const livro = {
+  const livros = [{
     id: '1',
     title: 'A Culpa é das Estrelas',
     authors: ['John Green'],
@@ -12,12 +12,12 @@ function Home() {
     imageUrl: 'https://d2drtqy2ezsot0.cloudfront.net/Book-0.jpg',
     publisher: 'Intrínseca',
     published: 2002,
-  };
+  }];
 
   return (
     <div className="home-container">
       <Header />
-      <CardLivro livro={livro} />
+      {livros.map((livro) => <CardLivro livro={livro} key={livro.id} />)}
       <Paginacao />
     </div>
   );
