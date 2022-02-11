@@ -1,9 +1,9 @@
 import './style.css';
 
-function FeedbackLogin() {
+function FeedbackLogin({ message }: { message: string }) {
   return (
     <div className="feedback-login-container">
-      <p>Email e/ou senha incorretos.</p>
+      <p>{message}</p>
     </div>
   );
 }

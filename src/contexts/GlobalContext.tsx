@@ -5,6 +5,8 @@ interface IGlobalContext {
   authToken: string | undefined;
   setAuthToken: React.Dispatch<string>;
   removeAuthToken: () => void;
+  nomeUsuarioLogado: string;
+  setNomeUsuarioLogado: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const GlobalContext = createContext<IGlobalContext>({} as IGlobalContext);
