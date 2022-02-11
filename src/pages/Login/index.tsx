@@ -1,6 +1,6 @@
 import './style.css';
 import React, { useState } from 'react';
-import Logo from '../../assets/logo.svg';
+import LogoWhite from '../../assets/logo-white.svg';
 import FeedbackLogin from '../../components/FeedbackLogin';
 
 function Login() {
@@ -14,7 +14,7 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-title">
-        <img src={Logo} alt="Logo ioasys" />
+        <img src={LogoWhite} alt="Logo ioasys" />
         <span>Books</span>
       </div>
       <form onSubmit={handleSubmit}>

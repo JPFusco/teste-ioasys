@@ -1,0 +1,40 @@
+.paginacao-container {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.paginacao-paginas {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #333333;
+
+  margin-right: 16px;
+}
+
+.paginacao-paginas strong {
+  font-weight: 500;
+}
+
+.paginacao-botoes {
+  display: flex;
+  align-items: center;
+}
+
+.paginacao-botoes button {
+  all: unset;
+  cursor: pointer;
+  
+  width: 32px;
+  height: 32px;
+
+  margin-right: 8px;
+}
+
+.paginacao-botoes .btn-esquerda {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.paginacao-botoes .btn-inativo {
+  opacity: 0.4;
+}
