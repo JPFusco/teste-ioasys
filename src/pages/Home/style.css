@@ -13,3 +13,8 @@
   padding: 42px 115px;
 }
 
+.livros-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+

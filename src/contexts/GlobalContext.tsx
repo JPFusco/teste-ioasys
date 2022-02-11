@@ -1,5 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, { createContext } from 'react';
 import useGlobalContextProvider from '../hooks/useGlobalContextProvider';
+import ILivro from '../interfaces/livro';
+
+type TAtualizarLivros = (paginaAtual: number,
+  setLivros: React.Dispatch<React.SetStateAction<ILivro[]>>) => Promise<void>;
 
 interface IGlobalContext {
   authToken: string | undefined;
@@ -7,6 +12,7 @@ interface IGlobalContext {
   removeAuthToken: () => void;
   nomeUsuarioLogado: string;
   setNomeUsuarioLogado: React.Dispatch<React.SetStateAction<string>>;
+  atualizarLivros: TAtualizarLivros;
 }
 
 export const GlobalContext = createContext<IGlobalContext>({} as IGlobalContext);

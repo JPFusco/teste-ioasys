@@ -1,18 +1,32 @@
 import './style.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import IconeMudarPagina from '../../assets/icone-mudar-pagina.svg';
+import useGlobalContext from '../../hooks/useGlobalContext';
+import ILivro from '../../interfaces/livro';
 
-function Paginacao() {
+function Paginacao({ setLivrosFetch }
+  : { setLivrosFetch: React.Dispatch<React.SetStateAction<ILivro[]>> }) {
   const [paginaAtual, setPaginaAtual] = useState(1);
-  const maxPaginas = 10;
+  const maxPaginas = 10; // O valor real seria response.totalPages do fetch inicial
+  const { atualizarLivros } = useGlobalContext();
 
-  const handlePaginaAnterior = () => (
-    paginaAtual === 1 ? setPaginaAtual(paginaAtual) : setPaginaAtual(paginaAtual - 1)
-  );
+  const handlePaginaAnterior = async () => {
+    if (paginaAtual === 1) {
+      setPaginaAtual(1);
+    } else {
+      setPaginaAtual(paginaAtual - 1);
+      await atualizarLivros(paginaAtual - 1, setLivrosFetch);
+    }
+  };
 
-  const handlePaginaSeguinte = () => (
-    paginaAtual === maxPaginas ? setPaginaAtual(paginaAtual) : setPaginaAtual(paginaAtual + 1)
-  );
+  const handlePaginaSeguinte = async () => {
+    if (paginaAtual === maxPaginas) {
+      setPaginaAtual(maxPaginas);
+    } else {
+      setPaginaAtual(paginaAtual + 1);
+      await atualizarLivros(paginaAtual + 1, setLivrosFetch);
+    }
+  };
 
   return (
     <div className="paginacao-container">
