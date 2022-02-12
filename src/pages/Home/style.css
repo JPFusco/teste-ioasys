@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
 
+  position: relative;
+
   background-image: url(../../assets/background-home.png), url(../../assets/background-home2.png);
   background-position: center;
   background-size: cover;
