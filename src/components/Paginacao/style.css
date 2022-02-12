@@ -38,3 +38,10 @@
 .paginacao-botoes .btn-inativo {
   opacity: 0.4;
 }
+
+@media (max-width: 550px) {
+  .paginacao-container {
+    align-self: center;
+    position: relative;
+  }
+}

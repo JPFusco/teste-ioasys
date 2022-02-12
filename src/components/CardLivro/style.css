@@ -55,3 +55,9 @@
 .card-livro-info p {
   color: #999999;
 }
+
+@media (max-width: 550px) {
+  .card-livro-container {
+    width: 290px;
+  }
+}
